@@ -16,7 +16,7 @@ public interface ProjectService {
 	
 	public List<ProjectUI> listProject();
 	
-	public List<ProjectUI> searchProject(ProjectUI projectUI);
+	//public List<ProjectUI> searchProject(ProjectUI projectUI);
 	
-	public List<ProjectUI> searchProject(ProjectUI projectUI, String sort);
+	//public List<ProjectUI> searchProject(ProjectUI projectUI, String sort);
 }

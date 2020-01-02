@@ -2,15 +2,15 @@ package com.task.api.model;
 
 public class ParentTaskUI {
 
-	private int parentId;
+	private Long  parentId;
 	
 	private String parentTask;
 
-	public int getParentId() {
+	public Long getParentId() {
 		return parentId;
 	}
 
-	public void setParentId(int parentId) {
+	public void setParentId(Long parentId) {
 		this.parentId = parentId;
 	}
 

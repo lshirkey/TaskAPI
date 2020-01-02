@@ -54,17 +54,17 @@ public class UserController {
 		return ResponseEntity.ok(object);
 	}
 
-	@PostMapping(path = "/searchUser", consumes = "application/json", produces = "application/json")
-	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-	public ResponseEntity<List<UserUI>> searchUser(@RequestBody UserUI userUI) {
-		List<UserUI> object = userService.searchUser(userUI);
-		return ResponseEntity.ok(object);
-	}
+//	@PostMapping(path = "/searchUser", consumes = "application/json", produces = "application/json")
+//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+//	public ResponseEntity<List<UserUI>> searchUser(@RequestBody UserUI userUI) {
+//		List<UserUI> object = userService.searchUser(userUI);
+//		return ResponseEntity.ok(object);
+//	}
 
-	@PostMapping(path = "/searchSortUser", consumes = "application/json", produces = "application/json")
-	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-	public ResponseEntity<List<UserUI>> searchSortUser(@RequestBody UserUI userUI, @RequestBody String sort) {
-		List<UserUI> object = userService.searchUser(userUI, sort);
-		return ResponseEntity.ok(object);
-	}
+//	@PostMapping(path = "/searchSortUser", consumes = "application/json", produces = "application/json")
+//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+//	public ResponseEntity<List<UserUI>> searchSortUser(@RequestBody UserUI userUI, @RequestBody String sort) {
+//		List<UserUI> object = userService.searchUser(userUI, sort);
+//		return ResponseEntity.ok(object);
+//	}
 }

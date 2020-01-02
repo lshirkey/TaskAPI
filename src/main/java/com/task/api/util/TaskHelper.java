@@ -22,22 +22,26 @@ public class TaskHelper {
 			task.setTask(taskUI.getTask());
 			task.setTaskId(taskUI.getTaskId());
 			
-			User user = new User();
-			user.setUserId(taskUI.getUserId());
-			user.setFirstName(taskUI.getFirstName());
-			task.setUser(user);
-			
-			ParentTask parentTask = new ParentTask();
-			parentTask.setParentId(taskUI.getParentId());
-			parentTask.setParentTask(taskUI.getParentTask());
-			task.setParentTask(parentTask);
-			
-			Project project = new Project();
-			project.setProjectId(taskUI.getProjectId());
-			project.setProject(taskUI.getProject());
-			task.setProject(project);
+			if (taskUI.getUserId() != null) {
+				User user = new User();
+				user.setUserId(taskUI.getUserId());
+				user.setFirstName(taskUI.getFirstName());
+				task.setUser(user);
+			}
+			if (taskUI.getParentId() !=null) {
+				ParentTask parentTask = new ParentTask();
+				parentTask.setParentId(taskUI.getParentId());
+				parentTask.setParentTask(taskUI.getParentTask());
+				task.setParentTask(parentTask);
+			}
+			if (taskUI.getProjectId() != null) {
+				Project project = new Project();
+				project.setProjectId(taskUI.getProjectId());
+				project.setProject(taskUI.getProject());
+				task.setProject(project);
+			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.getMessage();
 		}
 		return task;
 	}
@@ -52,17 +56,20 @@ public class TaskHelper {
 			taskUI.setStatus(task.getStatus());
 			taskUI.setTask(task.getTask());
 			taskUI.setTaskId(task.getTaskId());
-			
-			taskUI.setUserId(task.getUser().getUserId());
-			taskUI.setFirstName(task.getUser().getFirstName());
-			
-			taskUI.setParentId(task.getParentTask().getParentId());
-			taskUI.setParentTask(task.getParentTask().getParentTask());
-			
-			taskUI.setProjectId(task.getProject().getProjectId());
-			taskUI.setProject(task.getProject().getProject());
+			if (task.getUser()!=null) {
+				taskUI.setUserId(task.getUser().getUserId());
+				taskUI.setFirstName(task.getUser().getFirstName());
+			}
+			if (task.getParentTask() !=null) {
+				taskUI.setParentId(task.getParentTask().getParentId());
+				taskUI.setParentTask(task.getParentTask().getParentTask());
+			}
+			if (task.getProject()!=null) {
+				taskUI.setProjectId(task.getProject().getProjectId());
+				taskUI.setProject(task.getProject().getProject());
+			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.getMessage();
 		}
 		return taskUI;
 	}

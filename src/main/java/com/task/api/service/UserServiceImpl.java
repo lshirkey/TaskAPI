@@ -62,30 +62,30 @@ public class UserServiceImpl implements UserService {
 		return userUIList;
 	}
 
-	@Override
-	public List<UserUI> searchUser(UserUI userUI) {
-		Iterable<User> iterable = userRepository.findAll();
-		Iterator<User> iterator = iterable.iterator();
+//	@Override
+//	public List<UserUI> searchUser(UserUI userUI) {
+//		Iterable<User> iterable = userRepository.findAll();
+//		Iterator<User> iterator = iterable.iterator();
+//
+//		List<UserUI> userUIList = new ArrayList<UserUI>();
+//		while (iterator.hasNext()) {
+//			User User = iterator.next();
+//			userUIList.add(userHelper.getUserUI(User));
+//		}
+//		return userUIList;
+//	}
 
-		List<UserUI> userUIList = new ArrayList<UserUI>();
-		while (iterator.hasNext()) {
-			User User = iterator.next();
-			userUIList.add(userHelper.getUserUI(User));
-		}
-		return userUIList;
-	}
-
-	@Override
-	public List<UserUI> searchUser(UserUI userUI, String sort) {
-		Iterable<User> iterable = userRepository.findAll();
-		Iterator<User> iterator = iterable.iterator();
-
-		List<UserUI> userUIList = new ArrayList<UserUI>();
-		while (iterator.hasNext()) {
-			User User = iterator.next();
-			userUIList.add(userHelper.getUserUI(User));
-		}
-		return userUIList;
-	}
+//	@Override
+//	public List<UserUI> searchUser(UserUI userUI, String sort) {
+//		Iterable<User> iterable = userRepository.findAll();
+//		Iterator<User> iterator = iterable.iterator();
+//
+//		List<UserUI> userUIList = new ArrayList<UserUI>();
+//		while (iterator.hasNext()) {
+//			User User = iterator.next();
+//			userUIList.add(userHelper.getUserUI(User));
+//		}
+//		return userUIList;
+//	}
 
 }

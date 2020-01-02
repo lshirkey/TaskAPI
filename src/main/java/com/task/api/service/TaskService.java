@@ -16,7 +16,7 @@ public interface TaskService {
 	
 	public List<TaskUI> listTask();
 	
-	public List<TaskUI> searchTask(TaskUI taskUI);
+	//public List<TaskUI> searchTask(TaskUI taskUI);
 	
-	public List<TaskUI> searchTask(TaskUI taskUI, String sort);
+	//public List<TaskUI> searchTask(TaskUI taskUI, String sort);
 }

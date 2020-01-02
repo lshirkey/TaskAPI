@@ -4,22 +4,21 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "TASK_DETAILS")
 public class Task {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "TASK_ID", nullable = false)
-	private int taskId;
+	private Long  taskId;
 	
 	@Column(name = "TASK_NAME", nullable = false)
 	private String task;
@@ -31,30 +30,28 @@ public class Task {
 	private Date endDate;
 	
 	@Column(name = "PRIORITY", nullable = false)
-	private int priority;
+	private int  priority;
 	
 	@Column(name = "STATUS", nullable = false)
 	private String status;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "USER_ID_FK", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @ManyToOne
+    @JoinColumn(name = "USER_ID", nullable = false)
     private User user;
 
 	@ManyToOne
-	@JoinColumn(name = "PARENT_ID" , nullable = true)
+	@JoinColumn(name = "PARENT_ID", nullable = true)
     private ParentTask parentTask;
     
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "PROJECT_ID_FK", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @ManyToOne
+    @JoinColumn(name = "PROJECT_ID", nullable = false)
     private Project project;
 	
-	public int getTaskId() {
+	public Long  getTaskId() {
 		return taskId;
 	}
 
-	public void setTaskId(int taskId) {
+	public void setTaskId(Long  taskId) {
 		this.taskId = taskId;
 	}
 
@@ -82,11 +79,11 @@ public class Task {
 		this.endDate = endDate;
 	}
 
-	public int getPriority() {
+	public int  getPriority() {
 		return priority;
 	}
 
-	public void setPriority(int priority) {
+	public void setPriority(int  priority) {
 		this.priority = priority;
 	}
 
@@ -120,12 +117,5 @@ public class Task {
 
 	public void setProject(Project project) {
 		this.project = project;
-	}
-
-	@Override
-	public String toString() {
-		return "Task [taskId=" + taskId + ", task=" + task + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", priority=" + priority + ", status=" + status + ", user=" + user + ", parentTask=" + parentTask
-				+ ", project=" + project + "]";
 	}
 }

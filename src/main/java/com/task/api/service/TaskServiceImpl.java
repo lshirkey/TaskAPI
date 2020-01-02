@@ -8,7 +8,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.task.api.dao.ProjectRepository;
 import com.task.api.dao.TaskRepository;
+import com.task.api.entity.Project;
 import com.task.api.entity.Task;
 import com.task.api.model.TaskUI;
 import com.task.api.util.TaskHelper;
@@ -18,6 +20,9 @@ public class TaskServiceImpl implements TaskService {
 
 	@Autowired
 	TaskRepository taskRepository;
+	
+	@Autowired 
+	ProjectRepository projectRespository;
 	
 	TaskHelper taskHelper = new TaskHelper();
 	
@@ -34,7 +39,20 @@ public class TaskServiceImpl implements TaskService {
 	@Override
 	public TaskUI updateTask(TaskUI taskUI) {
 		Task task = taskHelper.getTask(taskUI);
-		return taskHelper.getTaskUI(taskRepository.save(task));
+		TaskUI updatedTaskUI = taskHelper.getTaskUI(taskRepository.save(task));
+		if (taskUI.getStatus() != null && "E".equalsIgnoreCase(taskUI.getStatus())) {
+			if (task.getProject()!= null && task.getProject().getProjectId() !=null) {
+				Optional<Project> projectOptionalList = projectRespository.findById(task.getProject().getProjectId());
+				if (projectOptionalList.isPresent()) {
+					Project project = projectOptionalList.get();
+					int taskCompletedCount = project.getTaskCompleted() + 1;
+					project.setTaskCompleted(taskCompletedCount);
+					projectRespository.save(project);
+				}
+				
+			}
+		}
+		return updatedTaskUI;
 	}
 
 	@Override
@@ -46,7 +64,19 @@ public class TaskServiceImpl implements TaskService {
 	@Override
 	public TaskUI addTask(TaskUI taskUI) {
 		Task task = taskHelper.getTask(taskUI);
-		return taskHelper.getTaskUI(taskRepository.save(task));
+		TaskUI newTaskUI = taskHelper.getTaskUI(taskRepository.save(task));
+		if (task.getProject()!= null && task.getProject().getProjectId() !=null) {
+			Optional<Project> projectOptionalList = projectRespository.findById(task.getProject().getProjectId());
+			if (projectOptionalList.isPresent()) {
+				Project project = projectOptionalList.get();
+				int taskCount = project.getTaskCount() + 1;
+				project.setTaskCount(taskCount);
+				projectRespository.save(project);
+			}
+			
+		}
+		return newTaskUI;
+		
 	}
 
 	@Override
@@ -62,30 +92,30 @@ public class TaskServiceImpl implements TaskService {
 		return taskUIList;
 	}
 
-	@Override
-	public List<TaskUI> searchTask(TaskUI taskUI) {
-		Iterable<Task> iterable = taskRepository.findAll();
-		Iterator<Task> iterator = iterable.iterator();
+//	@Override
+//	public List<TaskUI> searchTask(TaskUI taskUI) {
+//		Iterable<Task> iterable = taskRepository.findAll();
+//		Iterator<Task> iterator = iterable.iterator();
+//
+//		List<TaskUI> taskUIList = new ArrayList<TaskUI>();
+//		while (iterator.hasNext()) {
+//			Task Task = iterator.next();
+//			taskUIList.add(taskHelper.getTaskUI(Task));
+//		}
+//		return taskUIList;
+//	}
 
-		List<TaskUI> taskUIList = new ArrayList<TaskUI>();
-		while (iterator.hasNext()) {
-			Task Task = iterator.next();
-			taskUIList.add(taskHelper.getTaskUI(Task));
-		}
-		return taskUIList;
-	}
-
-	@Override
-	public List<TaskUI> searchTask(TaskUI taskUI, String sort) {
-		Iterable<Task> iterable = taskRepository.findAll();
-		Iterator<Task> iterator = iterable.iterator();
-
-		List<TaskUI> taskUIList = new ArrayList<TaskUI>();
-		while (iterator.hasNext()) {
-			Task Task = iterator.next();
-			taskUIList.add(taskHelper.getTaskUI(Task));
-		}
-		return taskUIList;
-	}
+//	@Override
+//	public List<TaskUI> searchTask(TaskUI taskUI, String sort) {
+//		Iterable<Task> iterable = taskRepository.findAll();
+//		Iterator<Task> iterator = iterable.iterator();
+//
+//		List<TaskUI> taskUIList = new ArrayList<TaskUI>();
+//		while (iterator.hasNext()) {
+//			Task Task = iterator.next();
+//			taskUIList.add(taskHelper.getTaskUI(Task));
+//		}
+//		return taskUIList;
+//	}
 
 }

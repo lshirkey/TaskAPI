@@ -62,30 +62,30 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectUIList;
 	}
 
-	@Override
-	public List<ProjectUI> searchProject(ProjectUI projectUI) {
-		Iterable<Project> iterable = projectRepository.findAll();
-		Iterator<Project> iterator = iterable.iterator();
-		
-		List<ProjectUI> projectUIList = new ArrayList<ProjectUI>();
-		while (iterator.hasNext()) {
-			Project project = iterator.next();
-			projectUIList.add(projectHelper.getProjectUI(project));
-		}
-		return projectUIList;
-	}
+//	@Override
+//	public List<ProjectUI> searchProject(ProjectUI projectUI) {
+//		Iterable<Project> iterable = projectRepository.findAll();
+//		Iterator<Project> iterator = iterable.iterator();
+//		
+//		List<ProjectUI> projectUIList = new ArrayList<ProjectUI>();
+//		while (iterator.hasNext()) {
+//			Project project = iterator.next();
+//			projectUIList.add(projectHelper.getProjectUI(project));
+//		}
+//		return projectUIList;
+//	}
 
-	@Override
-	public List<ProjectUI> searchProject(ProjectUI projectUI, String sort) {
-		Iterable<Project> iterable = projectRepository.findAll();
-		Iterator<Project> iterator = iterable.iterator();
-		
-		List<ProjectUI> projectUIList = new ArrayList<ProjectUI>();
-		while (iterator.hasNext()) {
-			Project project = iterator.next();
-			projectUIList.add(projectHelper.getProjectUI(project));
-		}
-		return projectUIList;
-	}
+//	@Override
+//	public List<ProjectUI> searchProject(ProjectUI projectUI, String sort) {
+//		Iterable<Project> iterable = projectRepository.findAll();
+//		Iterator<Project> iterator = iterable.iterator();
+//		
+//		List<ProjectUI> projectUIList = new ArrayList<ProjectUI>();
+//		while (iterator.hasNext()) {
+//			Project project = iterator.next();
+//			projectUIList.add(projectHelper.getProjectUI(project));
+//		}
+//		return projectUIList;
+//	}
 
 }

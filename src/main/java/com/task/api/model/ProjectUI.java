@@ -2,7 +2,7 @@ package com.task.api.model;
 
 public class ProjectUI {
 
-	private int projectId;
+	private Long projectId;
 	
 	private String project;
 	
@@ -12,7 +12,7 @@ public class ProjectUI {
 	
 	private int priority;
 
-	private int userId;
+	private Long userId;
 	
 	private String userName;
 	
@@ -22,11 +22,11 @@ public class ProjectUI {
 	
 	private String status;
 	
-	public int getProjectId() {
+	public Long getProjectId() {
 		return projectId;
 	}
 
-	public void setProjectId(int projectId) {
+	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 	}
 
@@ -62,11 +62,11 @@ public class ProjectUI {
 		this.priority = priority;
 	}
 
-	public int getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 

@@ -2,17 +2,17 @@ package com.task.api.model;
 
 public class TaskUI {
 
-	private int projectId;
+	private Long  projectId;
 
 	private String project;
 
-	private int taskId;
+	private Long  taskId;
 
 	private String task;
 
-	private int priority;
+	private int  priority;
 
-	private int parentId;
+	private Long  parentId;
 
 	private String parentTask;
 
@@ -20,33 +20,33 @@ public class TaskUI {
 
 	private String endDate;
 
-	private int userId;
+	private Long  userId;
 
 	private String firstName;
 
 	private String status;
 
-	public int getTaskId() {
+	public Long  getTaskId() {
 		return taskId;
 	}
 
-	public void setTaskId(int taskId) {
+	public void setTaskId(Long  taskId) {
 		this.taskId = taskId;
 	}
 
-	public int getParentId() {
+	public Long  getParentId() {
 		return parentId;
 	}
 
-	public void setParentId(int parentId) {
+	public void setParentId(Long  parentId) {
 		this.parentId = parentId;
 	}
 
-	public int getProjectId() {
+	public Long  getProjectId() {
 		return projectId;
 	}
 
-	public void setProjectId(int projectId) {
+	public void setProjectId(Long  projectId) {
 		this.projectId = projectId;
 	}
 
@@ -74,11 +74,11 @@ public class TaskUI {
 		this.endDate = endDate;
 	}
 
-	public int getPriority() {
+	public int  getPriority() {
 		return priority;
 	}
 
-	public void setPriority(int priority) {
+	public void setPriority(int  priority) {
 		this.priority = priority;
 	}
 
@@ -106,11 +106,11 @@ public class TaskUI {
 		this.parentTask = parentTask;
 	}
 
-	public int getUserId() {
+	public Long  getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Long  userId) {
 		this.userId = userId;
 	}
 

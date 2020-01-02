@@ -31,17 +31,17 @@ public class ParentTaskServiceImpl implements ParentTaskService {
 		return ui;
 	}
 
-	@Override
-	public ParentTaskUI updateParentTask(ParentTaskUI parentTaskUI) {
-		ParentTask parentTask = parentTaskHelper.getParentTask(parentTaskUI);
-		return parentTaskHelper.getParentTaskUI(parentTaskRepository.save(parentTask));
-	}
+//	@Override
+//	public ParentTaskUI updateParentTask(ParentTaskUI parentTaskUI) {
+//		ParentTask parentTask = parentTaskHelper.getParentTask(parentTaskUI);
+//		return parentTaskHelper.getParentTaskUI(parentTaskRepository.save(parentTask));
+//	}
 
-	@Override
-	public ParentTaskUI deleteParentTask(ParentTaskUI parentTaskUI) {
-		ParentTask ParentTask = parentTaskHelper.getParentTask(parentTaskUI);
-		return parentTaskHelper.getParentTaskUI(parentTaskRepository.save(ParentTask));
-	}
+//	@Override
+//	public ParentTaskUI deleteParentTask(ParentTaskUI parentTaskUI) {
+//		ParentTask ParentTask = parentTaskHelper.getParentTask(parentTaskUI);
+//		return parentTaskHelper.getParentTaskUI(parentTaskRepository.save(ParentTask));
+//	}
 
 	@Override
 	public ParentTaskUI addParentTask(ParentTaskUI parentTaskUI) {
@@ -49,43 +49,43 @@ public class ParentTaskServiceImpl implements ParentTaskService {
 		return parentTaskHelper.getParentTaskUI(parentTaskRepository.save(ParentTask));
 	}
 
-	@Override
-	public List<ParentTaskUI> listParentTask() {
-		Iterable<ParentTask> iterable = parentTaskRepository.findAll();
-		Iterator<ParentTask> iterator = iterable.iterator();
+//	@Override
+//	public List<ParentTaskUI> listParentTask() {
+//		Iterable<ParentTask> iterable = parentTaskRepository.findAll();
+//		Iterator<ParentTask> iterator = iterable.iterator();
+//
+//		List<ParentTaskUI> parentTaskUIList = new ArrayList<ParentTaskUI>();
+//		while (iterator.hasNext()) {
+//			ParentTask parentTask = iterator.next();
+//			parentTaskUIList.add(parentTaskHelper.getParentTaskUI(parentTask));
+//		}
+//		return parentTaskUIList;
+//	}
 
-		List<ParentTaskUI> parentTaskUIList = new ArrayList<ParentTaskUI>();
-		while (iterator.hasNext()) {
-			ParentTask parentTask = iterator.next();
-			parentTaskUIList.add(parentTaskHelper.getParentTaskUI(parentTask));
-		}
-		return parentTaskUIList;
-	}
+//	@Override
+//	public List<ParentTaskUI> searchParentTask(ParentTaskUI parentTaskUI) {
+//		Iterable<ParentTask> iterable = parentTaskRepository.findAll();
+//		Iterator<ParentTask> iterator = iterable.iterator();
+//		
+//		List<ParentTaskUI> parentTaskUIList = new ArrayList<ParentTaskUI>();
+//		while (iterator.hasNext()) {
+//			ParentTask parentTask = iterator.next();
+//			parentTaskUIList.add(parentTaskHelper.getParentTaskUI(parentTask));
+//		}
+//		return parentTaskUIList;
+//	}
 
-	@Override
-	public List<ParentTaskUI> searchParentTask(ParentTaskUI parentTaskUI) {
-		Iterable<ParentTask> iterable = parentTaskRepository.findAll();
-		Iterator<ParentTask> iterator = iterable.iterator();
-		
-		List<ParentTaskUI> parentTaskUIList = new ArrayList<ParentTaskUI>();
-		while (iterator.hasNext()) {
-			ParentTask parentTask = iterator.next();
-			parentTaskUIList.add(parentTaskHelper.getParentTaskUI(parentTask));
-		}
-		return parentTaskUIList;
-	}
-
-	@Override
-	public List<ParentTaskUI> searchParentTask(ParentTaskUI parentTaskUI, String sort) {
-		Iterable<ParentTask> iterable = parentTaskRepository.findAll();
-		Iterator<ParentTask> iterator = iterable.iterator();
-		
-		List<ParentTaskUI> parentTaskUIList = new ArrayList<ParentTaskUI>();
-		while (iterator.hasNext()) {
-			ParentTask parentTask = iterator.next();
-			parentTaskUIList.add(parentTaskHelper.getParentTaskUI(parentTask));
-		}
-		return parentTaskUIList;
-	}
+//	@Override
+//	public List<ParentTaskUI> searchParentTask(ParentTaskUI parentTaskUI, String sort) {
+//		Iterable<ParentTask> iterable = parentTaskRepository.findAll();
+//		Iterator<ParentTask> iterator = iterable.iterator();
+//		
+//		List<ParentTaskUI> parentTaskUIList = new ArrayList<ParentTaskUI>();
+//		while (iterator.hasNext()) {
+//			ParentTask parentTask = iterator.next();
+//			parentTaskUIList.add(parentTaskHelper.getParentTaskUI(parentTask));
+//		}
+//		return parentTaskUIList;
+//	}
 
 }

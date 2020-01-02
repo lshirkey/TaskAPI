@@ -2,21 +2,21 @@ package com.task.api.model;
 
 public class UserUI {
 
-	private int userId;
+	private Long  userId;
 	
 	private String firstName;
 	
 	private String lastName;
 	
-	private int employeeId;
+	private Long  employeeId;
 	
 	private String status;
 
-	public int getUserId() {
+	public Long  getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Long  userId) {
 		this.userId = userId;
 	}
 
@@ -36,11 +36,11 @@ public class UserUI {
 		this.lastName = lastName;
 	}
 
-	public int getEmployeeId() {
+	public Long  getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(Long  employeeId) {
 		this.employeeId = employeeId;
 	}
 

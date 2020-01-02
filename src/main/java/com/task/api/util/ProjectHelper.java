@@ -29,7 +29,7 @@ public class ProjectHelper {
 			project.setTaskCount(projectUI.getTaskCount());
 			project.setTaskCompleted(projectUI.getTaskCompleted());
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.getMessage();
 		}
 		return project;
 	}
@@ -54,7 +54,7 @@ public class ProjectHelper {
 			projectUI.setTaskCount(project.getTaskCount());
 			projectUI.setTaskCompleted(project.getTaskCompleted());
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.getMessage();
 		}
 		return projectUI;
 	}

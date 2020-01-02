@@ -2,6 +2,8 @@ package com.task.api.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,17 +12,18 @@ import javax.persistence.Table;
 public class ParentTask {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "PARENT_ID")
-	private int parentId;
+	private Long  parentId;
 	
 	@Column(name = "PARENT_TASK_NAME")
 	private String parentTask;
 
-	public int getParentId() {
+	public Long  getParentId() {
 		return parentId;
 	}
 
-	public void setParentId(int parentId) {
+	public void setParentId(Long  parentId) {
 		this.parentId = parentId;
 	}
 

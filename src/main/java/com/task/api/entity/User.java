@@ -1,14 +1,10 @@
 package com.task.api.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,8 +12,9 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USER_ID", nullable = false)
-	private int userId;
+	private Long  userId;
 	
 	@Column(name = "FIRST_NAME", nullable = false)
 	private String firstName;
@@ -26,24 +23,17 @@ public class User {
 	private String lastName;
 	
 	@Column(name = "EMPLOYEE_ID", nullable = false)
-	private int employeeId;
+	private Long  employeeId;
 	
 	@Column(name = "STATUS", nullable = false)
 	private String status;
 
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "USER_ID_FK")
-	private List<Project> projectList = new ArrayList<Project>();
 	
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "USER_ID_FK")
-	private List<Task> taskList = new ArrayList<Task>();
-	
-	public int getUserId() {
+	public Long  getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Long  userId) {
 		this.userId = userId;
 	}
 
@@ -63,11 +53,11 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public int getEmployeeId() {
+	public Long  getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(Long  employeeId) {
 		this.employeeId = employeeId;
 	}
 
@@ -77,19 +67,5 @@ public class User {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public List<Project> getProjectList() {
-		return projectList;
-	}
-
-	public void setProjectList(List<Project> projectList) {
-		this.projectList = projectList;
-	}
-
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", employeeId="
-				+ employeeId + ", status=" + status + ", projectList=" + projectList + "]";
 	}
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.task.api.entity.ParentTask;
 
 @Repository
-public interface ParentTaskRepository extends CrudRepository<ParentTask, Integer> {
+public interface ParentTaskRepository extends CrudRepository<ParentTask, Long> {
 
 }
