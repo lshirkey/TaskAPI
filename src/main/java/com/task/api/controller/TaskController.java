@@ -18,15 +18,6 @@ public class TaskController {
 	
 	@Autowired
 	TaskService taskService;
-
-//	@PostMapping(path = "/getTask", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<TaskUI> getTask(@RequestBody TaskUI taskUI) {
-////		TaskUI taskUI = new TaskUI();
-////		taskUI.setTaskId(Integer.valueOf(taskId));
-//		TaskUI object = taskService.viewTask(taskUI);
-//		return ResponseEntity.ok(object);
-//	}
 	
 	@PostMapping(path = "/viewTask", consumes = "application/json", produces = "application/json")
 	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
@@ -52,7 +43,6 @@ public class TaskController {
 	@PostMapping(path = "/addTask", consumes = "application/json", produces = "application/json")
 	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 	public ResponseEntity<TaskUI> addTask(@RequestBody TaskUI taskUI) {
-		//Task [taskId=0, parentId=2, projectId=4, task=Coding, startDate=2019-12-20, endDate=2019-12-23, priority=10, status=null]
 		TaskUI object = taskService.addTask(taskUI);
 		return ResponseEntity.ok(object);
 	}
@@ -63,18 +53,4 @@ public class TaskController {
 		List<TaskUI> object = taskService.listTask();
 		return ResponseEntity.ok(object);
 	}
-
-//	@PostMapping(path = "/searchTask", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<List<TaskUI>> searchTask(@RequestBody TaskUI taskUI) {
-//		List<TaskUI> object = taskService.searchTask(taskUI);
-//		return ResponseEntity.ok(object);
-//	}
-
-//	@PostMapping(path = "/searchSortTask", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<List<TaskUI>> searchSortTask(@RequestBody TaskUI taskUI, @RequestBody String sort) {
-//		List<TaskUI> object = taskService.searchTask(taskUI, sort);
-//		return ResponseEntity.ok(object);
-//	}
 }

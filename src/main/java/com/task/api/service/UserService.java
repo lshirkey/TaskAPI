@@ -15,8 +15,4 @@ public interface UserService {
 	public UserUI addUser(UserUI userUI);
 	
 	public List<UserUI> listUser();
-	
-	//public List<UserUI> searchUser(UserUI userUI);
-	
-	//public List<UserUI> searchUser(UserUI userUI, String sort);
 }

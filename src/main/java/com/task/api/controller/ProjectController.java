@@ -53,18 +53,4 @@ public class ProjectController {
 		List<ProjectUI> object = projectService.listProject();
 		return ResponseEntity.ok(object);
 	}
-
-//	@PostMapping(path = "/searchProject", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<List<ProjectUI>> searchProject(@RequestBody ProjectUI projectUI) {
-//		List<ProjectUI> object = projectService.searchProject(projectUI);
-//		return ResponseEntity.ok(object);
-//	}
-
-//	@PostMapping(path = "/searchSortProject", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<List<ProjectUI>> searchSortProject(@RequestBody ProjectUI projectUI, @RequestBody String sort) {
-//		List<ProjectUI> object = projectService.searchProject(projectUI, sort);
-//		return ResponseEntity.ok(object);
-//	}
 }

@@ -15,8 +15,4 @@ public interface ProjectService {
 	public ProjectUI addProject(ProjectUI projectUI);
 	
 	public List<ProjectUI> listProject();
-	
-	//public List<ProjectUI> searchProject(ProjectUI projectUI);
-	
-	//public List<ProjectUI> searchProject(ProjectUI projectUI, String sort);
 }

@@ -91,31 +91,4 @@ public class TaskServiceImpl implements TaskService {
 		}
 		return taskUIList;
 	}
-
-//	@Override
-//	public List<TaskUI> searchTask(TaskUI taskUI) {
-//		Iterable<Task> iterable = taskRepository.findAll();
-//		Iterator<Task> iterator = iterable.iterator();
-//
-//		List<TaskUI> taskUIList = new ArrayList<TaskUI>();
-//		while (iterator.hasNext()) {
-//			Task Task = iterator.next();
-//			taskUIList.add(taskHelper.getTaskUI(Task));
-//		}
-//		return taskUIList;
-//	}
-
-//	@Override
-//	public List<TaskUI> searchTask(TaskUI taskUI, String sort) {
-//		Iterable<Task> iterable = taskRepository.findAll();
-//		Iterator<Task> iterator = iterable.iterator();
-//
-//		List<TaskUI> taskUIList = new ArrayList<TaskUI>();
-//		while (iterator.hasNext()) {
-//			Task Task = iterator.next();
-//			taskUIList.add(taskHelper.getTaskUI(Task));
-//		}
-//		return taskUIList;
-//	}
-
 }

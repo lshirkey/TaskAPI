@@ -26,20 +26,6 @@ public class ParentTaskController {
 		return ResponseEntity.ok(object);
 	}
 
-//	@PostMapping(path = "/updateParentTask", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<ParentTaskUI> updateParentTask(@RequestBody ParentTaskUI parentTaskUI) {
-//		ParentTaskUI object = parentTaskService.updateParentTask(parentTaskUI);
-//		return ResponseEntity.ok(object);
-//	}
-//
-//	@PostMapping(path = "/deleteParentTask", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<ParentTaskUI> deleteParentTask(@RequestBody ParentTaskUI parentTaskUI) {
-//		ParentTaskUI object = parentTaskService.deleteParentTask(parentTaskUI);
-//		return ResponseEntity.ok(object);
-//	}
-
 	@PostMapping(path = "/addParentTask", consumes = "application/json", produces = "application/json")
 	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 	public ResponseEntity<ParentTaskUI> addParentTask(@RequestBody ParentTaskUI parentTaskUI) {
@@ -53,18 +39,4 @@ public class ParentTaskController {
 		List<ParentTaskUI> object = parentTaskService.listParentTask();
 		return ResponseEntity.ok(object);
 	}
-
-//	@PostMapping(path = "/searchParentTask", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<List<ParentTaskUI>> searchParentTask(@RequestBody ParentTaskUI parentTaskUI) {
-//		List<ParentTaskUI> object = parentTaskService.searchParentTask(parentTaskUI);
-//		return ResponseEntity.ok(object);
-//	}
-
-//	@PostMapping(path = "/searchSortParentTask", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<List<ParentTaskUI>> searchSortParentTask(@RequestBody ParentTaskUI parentTaskUI, String sort) {
-//		List<ParentTaskUI> object = parentTaskService.searchParentTask(parentTaskUI, sort);
-//		return ResponseEntity.ok(object);
-//	}
 }
