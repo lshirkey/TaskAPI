@@ -49,18 +49,18 @@ public class ParentTaskServiceImpl implements ParentTaskService {
 		return parentTaskHelper.getParentTaskUI(parentTaskRepository.save(ParentTask));
 	}
 
-//	@Override
-//	public List<ParentTaskUI> listParentTask() {
-//		Iterable<ParentTask> iterable = parentTaskRepository.findAll();
-//		Iterator<ParentTask> iterator = iterable.iterator();
-//
-//		List<ParentTaskUI> parentTaskUIList = new ArrayList<ParentTaskUI>();
-//		while (iterator.hasNext()) {
-//			ParentTask parentTask = iterator.next();
-//			parentTaskUIList.add(parentTaskHelper.getParentTaskUI(parentTask));
-//		}
-//		return parentTaskUIList;
-//	}
+	@Override
+	public List<ParentTaskUI> listParentTask() {
+		Iterable<ParentTask> iterable = parentTaskRepository.findAll();
+		Iterator<ParentTask> iterator = iterable.iterator();
+
+		List<ParentTaskUI> parentTaskUIList = new ArrayList<ParentTaskUI>();
+		while (iterator.hasNext()) {
+			ParentTask parentTask = iterator.next();
+			parentTaskUIList.add(parentTaskHelper.getParentTaskUI(parentTask));
+		}
+		return parentTaskUIList;
+	}
 
 //	@Override
 //	public List<ParentTaskUI> searchParentTask(ParentTaskUI parentTaskUI) {

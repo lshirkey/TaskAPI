@@ -8,7 +8,7 @@ public class UserUI {
 	
 	private String lastName;
 	
-	private Long  employeeId;
+	private String  employeeId;
 	
 	private String status;
 
@@ -36,11 +36,11 @@ public class UserUI {
 		this.lastName = lastName;
 	}
 
-	public Long  getEmployeeId() {
+	public String  getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(Long  employeeId) {
+	public void setEmployeeId(String  employeeId) {
 		this.employeeId = employeeId;
 	}
 

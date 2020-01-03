@@ -14,7 +14,7 @@ public interface ParentTaskService {
 	
 	public ParentTaskUI addParentTask(ParentTaskUI parentTaskUI);
 	
-	//public List<ParentTaskUI> listParentTask();
+	public List<ParentTaskUI> listParentTask();
 	
 	//public List<ParentTaskUI> searchParentTask(ParentTaskUI parentTaskUI);
 	

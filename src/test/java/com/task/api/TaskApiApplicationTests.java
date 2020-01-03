@@ -46,6 +46,7 @@ class TaskApiApplicationTests {
 	
 	private String PARENT_TASK_ADD_URI = "/addParentTask";
 	private String PARENT_TASK_VIEW_URI = "/viewParentTask";
+	private String PARENT_TASK_LIST_URI = "/listParentTask";
 	
 	private String TASK_ADD_URI = "/addTask";
 	private String TASK_UPDATE_URI = "/updateTask";
@@ -265,6 +266,10 @@ class TaskApiApplicationTests {
 		String viewParentTaskURL = HOST_URL + PORT + PARENT_TASK_VIEW_URI;
 		ResponseEntity<ParentTaskUI> viewParentTaskUI = restTemplate.exchange(viewParentTaskURL, HttpMethod.POST, entity, ParentTaskUI.class);
 		assertEquals(200, viewParentTaskUI.getStatusCodeValue());
+		
+		HttpEntity<String> entityList = new HttpEntity<>(headers);
+		String url = HOST_URL + PORT + PARENT_TASK_LIST_URI;
+		assertEquals(true, !restTemplate.exchange(url, HttpMethod.POST, entityList, ArrayList.class).getBody().isEmpty());
 	}
 	
 	@Sql({"classpath:schema.sql"})
@@ -383,7 +388,7 @@ class TaskApiApplicationTests {
 
 	private UserUI getUserUIObject() {
 		UserUI userUI = new UserUI();
-		userUI.setEmployeeId(1234l);
+		userUI.setEmployeeId("1234");
 		userUI.setFirstName("Test");
 		userUI.setLastName("Test");
 		userUI.setStatus("A");

@@ -1,5 +1,7 @@
 package com.task.api.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -45,13 +47,13 @@ public class ParentTaskController {
 		return ResponseEntity.ok(object);
 	}
 
-//	@PostMapping(path = "/listParentTask", consumes = "application/json", produces = "application/json")
-//	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//	public ResponseEntity<List<ParentTaskUI>> listParentTask() {
-//		List<ParentTaskUI> object = parentTaskService.listParentTask();
-//		return ResponseEntity.ok(object);
-//	}
-//
+	@PostMapping(path = "/listParentTask", consumes = "application/json", produces = "application/json")
+	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+	public ResponseEntity<List<ParentTaskUI>> listParentTask() {
+		List<ParentTaskUI> object = parentTaskService.listParentTask();
+		return ResponseEntity.ok(object);
+	}
+
 //	@PostMapping(path = "/searchParentTask", consumes = "application/json", produces = "application/json")
 //	@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 //	public ResponseEntity<List<ParentTaskUI>> searchParentTask(@RequestBody ParentTaskUI parentTaskUI) {

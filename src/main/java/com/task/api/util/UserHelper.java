@@ -7,7 +7,7 @@ public class UserHelper {
 
 	public User getUser(UserUI userUI) {
 		User user = new User();
-		user.setEmployeeId(userUI.getEmployeeId());
+		user.setEmployeeId(Long.valueOf(userUI.getEmployeeId()));
 		user.setFirstName(userUI.getFirstName());
 		user.setLastName(userUI.getLastName());
 		user.setUserId(userUI.getUserId());
@@ -17,7 +17,7 @@ public class UserHelper {
 	
 	public UserUI getUserUI(User user) {
 		UserUI userUI = new UserUI();
-		userUI.setEmployeeId(user.getEmployeeId());
+		userUI.setEmployeeId(Long.toString(user.getEmployeeId()));
 		userUI.setFirstName(user.getFirstName());
 		userUI.setLastName(user.getLastName());
 		userUI.setUserId(user.getUserId());
